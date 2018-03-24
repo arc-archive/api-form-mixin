@@ -9,11 +9,11 @@ Custom property | Description | Default
 `--api-form-row-optional` | Mixin applied to optional row of the form (not required). By default this form row is hidden from the view | `{}`
 `--api-form-row-optional-visible` | Mixin applied to optional row of the form when it becomes visible | `{}`
 `--api-form-action-button-color` | Color of the action button in the form. Action buttons should perform form's primary actions like "submit" or "add new". Use `--api-form-action-icon-*` for icons related styling | `--secondary-button-color` or `--accent-color`
-`--api-form-action-button-background` | Similar to `--api-form-action-button-color` but it's background color | `--secondary-button-background` or `#fff`
+`--api-form-action-button-background-color` | Similar to `--api-form-action-button-color` but it's background color | `--secondary-button-background`
 `--secondary-button` | Mixin applied to the action button. This is more general theme element. This values can be overriten by `--api-form-action-button` | `{}`
 `--api-form-action-button` | Mixin applied to the action button | `{}`
 `--api-form-action-button-hover-color` | Color of the action button in the form when hovering. | `--secondary-button-color` or `--accent-color`
-`--api-form-action-button-hover-background` | Similar to `--api-form-action-button-hover-color` but it's background color | `--secondary-button-background` or `#fff`
+`--api-form-action-button-hover-background-color` | Similar to `--api-form-action-button-hover-color` but it's background color | `--secondary-button-background`
 `--secondary-button-hover` | Mixin applied to the action button when hovered. This is more general theme element. This values can be overriten by `--api-form-action-button` | `{}`
 `--api-form-action-button-hover` | Mixin applied to the action button when hovered. | `{}`
 `--hint-trigger-color` | Color of the form action icon button to dispay documentation for the item. | `rgba(0, 0, 0, 0.74)`
@@ -56,14 +56,14 @@ Custom property | Description | Default
       transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
       margin: 0;
       color: var(--api-form-action-button-color, var(--secondary-button-color, var(--accent-color)));
-      background: var(--api-form-action-button-background, var(--secondary-button-background, #fff));
+      background-color: var(--api-form-action-button-background-color, var(--secondary-button-background));
       @apply --secondary-button;
       @apply --api-form-action-button;
     }
 
     .action-button:hover {
       color: var(--api-form-action-button-hover-color, var(--secondary-button-color, var(--accent-color)));
-      background: var(--api-form-action-button-hover-background-color, var(--secondary-button-background, #fff));
+      background-color: var(--api-form-action-button-hover-background-color, var(--secondary-button-background));
       @apply --secondary-button-hover;
       @apply --api-form-action-button-hover;
     }
