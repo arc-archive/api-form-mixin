@@ -231,8 +231,8 @@ ArcBehaviors.ApiFormMixin = Polymer.dedupingMixin((base) => {
         composed: true,
         cancelable: true,
         detail: {
-          name: '',
-          value: '',
+          name: opts.name || '',
+          value: opts.value || '',
           binding: binding,
           schema: {
             enabled: true,
