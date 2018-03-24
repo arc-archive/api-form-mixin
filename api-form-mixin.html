@@ -226,13 +226,16 @@ ArcBehaviors.ApiFormMixin = Polymer.dedupingMixin((base) => {
      * - inputLabel {String} - Forces a label of the input
      */
     addCustom(binding, opts) {
+      if (!opts) {
+        opts = {};
+      }
       const e = new CustomEvent('api-property-model-build', {
         bubbles: true,
         composed: true,
         cancelable: true,
         detail: {
-          name: '',
-          value: '',
+          name: opts.name || '',
+          value: opts.value || '',
           binding: binding,
           schema: {
             enabled: true,
