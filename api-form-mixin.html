@@ -90,7 +90,17 @@ ArcBehaviors.ApiFormMixin = Polymer.dedupingMixin((base) => {
         /**
          * Renders items in "narrow" view
          */
-        narrow: Boolean
+        narrow: Boolean,
+        /**
+         * Computed value. The form renders empty message (if supported by
+         * the form element). It occurs when model is not set and allowCustom
+         * is not set
+         */
+        renderEmptyMessage: {
+          type: Boolean,
+          value: true,
+          computed: '_computeRenderEmptyMessage(allowCustom, model)'
+        }
       };
     }
     /**
@@ -279,6 +289,16 @@ ArcBehaviors.ApiFormMixin = Polymer.dedupingMixin((base) => {
         return true;
       }
       return false;
+    }
+    /**
+     * Computes value for `renderEmptyMessage`.
+     *
+     * @param {Boolean} allowCustom True if the form allows to add custom values.
+     * @param {?Array} model Current model
+     * @return {Boolean} `true` when allowCustom is falsy set and model is empty
+     */
+    _computeRenderEmptyMessage(allowCustom, model) {
+      return !allowCustom && !model;
     }
   }
 return AFmixin;

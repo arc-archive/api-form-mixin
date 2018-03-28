@@ -25,6 +25,11 @@
       </template>
     </test-fixture>
 
+    <test-fixture id="AllowCustom">
+      <template>
+        <test-element allow-custom></test-element>
+      </template>
+    </test-fixture>
     <script>
       suite('Basic computations', () => {
 
@@ -46,6 +51,30 @@
         test('renderOptionalCheckbox is computed when allowHideOptional is set', () => {
           const element = fixture('AllowOptional');
           assert.isFalse(element.renderOptionalCheckbox);
+        });
+
+        test('renderEmptyMessage is true', () => {
+          const element = fixture('Basic');
+          assert.isTrue(element.renderEmptyMessage);
+        });
+
+        test('renderEmptyMessage is false when custom are allowed', () => {
+          const element = fixture('AllowCustom');
+          assert.isFalse(element.renderEmptyMessage);
+        });
+
+        test('renderEmptyMessage is false when model is set', () => {
+          const element = fixture('Basic');
+          element.model = [{name: '', value: '', schema: {}}];
+          assert.isFalse(element.renderEmptyMessage);
+        });
+
+        test('renderEmptyMessage goes back to false', () => {
+          const element = fixture('Basic');
+          element.model = [{name: '', value: '', schema: {}}];
+          assert.isFalse(element.renderEmptyMessage);
+          element.model = undefined;
+          assert.isTrue(element.renderEmptyMessage);
         });
       });
 
