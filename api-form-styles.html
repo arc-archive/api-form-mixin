@@ -54,7 +54,7 @@ Custom property | Description | Default
     /* General action button like "add property" etc */
     .action-button {
       transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
-      margin: 0;
+      margin: var(--api-form-action-button-margin-top, 0);
       color: var(--api-form-action-button-color, var(--secondary-button-color, var(--accent-color)));
       background-color: var(--api-form-action-button-background-color, var(--secondary-button-background));
       @apply --secondary-button;
