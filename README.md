@@ -10,7 +10,6 @@ It contains common methods used in forms.
 
 Use `api-form-styles` from this package to include common styles.
 
-
 ### API components
 
 This components is a part of API components ecosystem: https://elements.advancedrestclient.com/
