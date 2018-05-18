@@ -8,8 +8,6 @@
  *   api-form-mixin.html
  */
 
-/// <reference path="../polymer/types/lib/utils/mixin.d.ts" />
-
 declare namespace ArcBehaviors {
 
 
@@ -73,6 +71,13 @@ declare namespace ArcBehaviors {
      * Renders items in "narrow" view
      */
     narrow: boolean|null|undefined;
+
+    /**
+     * Computed value. The form renders empty message (if supported by
+     * the form element). It occurs when model is not set and allowCustom
+     * is not set
+     */
+    readonly renderEmptyMessage: boolean|null|undefined;
 
     /**
      * Computes class name for each form item depending on the item state.
@@ -156,8 +161,10 @@ declare namespace ArcBehaviors {
      * `model`.
      *
      * @param binding Value if the `binding` property.
+     * @param opts Additional options:
+     * - inputLabel {String} - Forces a label of the input
      */
-    addCustom(binding: String|null): void;
+    addCustom(binding: String|null, opts: object|null): void;
 
     /**
      * Removes custom item from the UI.
@@ -176,5 +183,14 @@ declare namespace ArcBehaviors {
      * @returns `true` if the model item is optional in the form.
      */
     computeIsOptional(hasOptional: Boolean|null, model: object|null): Boolean|null;
+
+    /**
+     * Computes value for `renderEmptyMessage`.
+     *
+     * @param allowCustom True if the form allows to add custom values.
+     * @param model Current model
+     * @returns `true` when allowCustom is falsy set and model is empty
+     */
+    _computeRenderEmptyMessage(allowCustom: Boolean|null, model: any[]|null): Boolean|null;
   }
 }

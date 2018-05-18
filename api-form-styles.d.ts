@@ -8,5 +8,3 @@
  *   api-form-styles.html
  */
 
-/// <reference path="../polymer/types/polymer-element.d.ts" />
-
