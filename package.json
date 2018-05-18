@@ -4,8 +4,7 @@
   "version": "2.0.0-preview",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.1.1",
-    "bower": "^1.8.0"
+    "@polymer/gen-typescript-declarations": "^1.1.1"
   },
   "private": false,
   "main": "api-form-mixin.html",
