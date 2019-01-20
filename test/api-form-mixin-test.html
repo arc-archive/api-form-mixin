@@ -10,6 +10,7 @@
     <script src="../../web-component-tester/browser.js"></script>
 
     <link rel="import" href="test-element.html">
+    <link rel="import" href="no-form-element.html">
   </head>
   <body>
 
@@ -30,9 +31,14 @@
         <test-element allow-custom></test-element>
       </template>
     </test-fixture>
+
+    <test-fixture id="NoForm">
+      <template>
+        <no-form-element></no-form-element>
+      </template>
+    </test-fixture>
     <script>
       suite('Basic computations', () => {
-
         test('hasOptional is not computed when model and allowHideOptional is not set', () => {
           const element = fixture('Basic');
           assert.isUndefined(element.hasOptional);
@@ -154,6 +160,12 @@
           const form = element._getForm();
           assert.isTrue(element.$.form === form);
         });
+
+        test('Returns null when no iron-form', () => {
+          const element = fixture('NoForm');
+          const form = element._getForm();
+          assert.equal(form, null);
+        });
       });
 
       suite('_getValidity()', () => {
@@ -194,6 +206,12 @@
             done();
           });
         });
+
+        test('Returns true when no iron-form', () => {
+          const element = fixture('NoForm');
+          const result = element._getValidity();
+          assert.isTrue(result);
+        });
       });
 
       suite('serializeForm()', () => {
@@ -222,6 +240,12 @@
             assert.lengthOf(Object.keys(result), 2);
             done();
           });
+        });
+
+        test('Returns undefined when no iron-form', () => {
+          const element = fixture('NoForm');
+          const result = element.serializeForm();
+          assert.isUndefined(result);
         });
       });
 
@@ -284,6 +308,35 @@
             done();
           });
           element.addCustom();
+        });
+      });
+
+      suite('computeIsOptional()', () => {
+        let model;
+        let element;
+        setup(() => {
+          element = fixture('Basic');
+          model = {
+            required: false,
+            name: 'test-name',
+            value: 'test-value'
+          };
+        });
+
+        test('Returns false when hasOptional is false', () => {
+          const result = element.computeIsOptional(false, model);
+          assert.isFalse(result);
+        });
+
+        test('Returns true when required is false', () => {
+          const result = element.computeIsOptional(true, model);
+          assert.isTrue(result);
+        });
+
+        test('Returns false when required is true', () => {
+          model.required = true;
+          const result = element.computeIsOptional(true, model);
+          assert.isFalse(result);
         });
       });
     </script>

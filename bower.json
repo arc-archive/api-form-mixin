@@ -1,7 +1,7 @@
 {
   "name": "api-form-mixin",
   "description": "A mixin that contains common properties, methods and styles for components that implements AMF based forms",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "api-form-mixin.html",
   "license": "Apache-2.0",
   "authors": [
