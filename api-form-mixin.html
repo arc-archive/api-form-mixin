@@ -145,9 +145,6 @@ ArcBehaviors.ApiFormMixin = Polymer.dedupingMixin((base) => {
      * DOM is not yet initialized.
      */
     _getForm() {
-      if (!this.$) {
-        this.$ = {};
-      }
       if (!this.$.form && this.shadowRoot) {
         this.$.form = this.shadowRoot.querySelector('iron-form');
       }

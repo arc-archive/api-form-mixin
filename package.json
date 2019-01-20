@@ -1,10 +1,10 @@
 {
   "name": "@api-components/api-form-mixin",
   "description": "A mixin that contains common properties, methods and styles for components that implements AMF based forms",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.1.1"
+    "@polymer/gen-typescript-declarations": "^1.6.0"
   },
   "private": false,
   "main": "api-form-mixin.html",
