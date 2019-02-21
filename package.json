@@ -1,13 +1,31 @@
 {
-  "name": "@api-components/api-form-mixin",
   "description": "A mixin that contains common properties, methods and styles for components that implements AMF based forms",
-  "version": "2.0.1",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "raml",
+    "oas",
+    "form builder"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/advanced-rest-client/api-form-mixin.git"
+  },
+  "name": "@api-components/api-form-mixin",
+  "version": "3.0.0-preview.1",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.6.0"
+    "@polymer/gen-typescript-declarations": "^1.6.0",
+    "@polymer/iron-demo-helpers": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@polymer/iron-component-page": "^4.0.0",
+    "@polymer/iron-form": "^3.0.0",
+    "@polymer/test-fixture": "^4.0.2",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "wct-mocha": "^1.0.0"
   },
-  "private": false,
-  "main": "api-form-mixin.html",
+  "main": "api-form-mixin.js",
   "authors": [
     "Pawel Psztyc",
     "The Advanced REST client authors <arc@mulesoft.com>"
@@ -18,12 +36,15 @@
     "test": "polymer test --plugin local",
     "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/advanced-rest-client/api-form-mixin.git"
-  },
   "bugs": {
     "url": "https://github.com/advanced-rest-client/api-form-mixin/issues",
     "email": "arc@mulesoft.com"
+  },
+  "contributors": [
+    "pawel Psztyc",
+    "The Advanced REST client authors <arc@mulesoft.com>"
+  ],
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
   }
 }

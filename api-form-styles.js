@@ -1,5 +1,7 @@
-<link rel="import" href="../polymer/polymer-element.html">
-<!--
+import '@polymer/polymer/polymer-element.js';
+const $documentContainer = document.createElement('template');
+
+/**
 Common styles for API forms.
 
 Custom property | Description | Default
@@ -25,9 +27,9 @@ Custom property | Description | Default
 `--inline-documentation-background-color` | Background color of the documentation element. | `#FFF3E0`
 `--inline-documentation-color` | Color of the documentation element | `rgba(0, 0, 0, 0.87)`
 `--inline-documentation-font-size` | Font size of the documentaiton element | `13px`
+*/
 
--->
-<dom-module id="api-form-styles">
+$documentContainer.innerHTML = `<dom-module id="api-form-styles">
   <template>
     <style>
     .form-item {
@@ -102,7 +104,7 @@ Custom property | Description | Default
       background-color: var(--inline-documentation-background-color, #FFF3E0);
       padding: 4px;
     }
-    /* wrapped for `marked-element` */
+    /* wrapped for \`marked-element\` */
     .docs {
       @apply --arc-font-body1;
       color: var(--inline-documentation-color, rgba(0, 0, 0, 0.87));
@@ -124,4 +126,6 @@ Custom property | Description | Default
     }
     </style>
   </template>
-</dom-module>
+</dom-module>`;
+
+document.head.appendChild($documentContainer.content);
