@@ -1,4 +1,4 @@
-import '@polymer/polymer/polymer-element.js';
+import '../../@polymer/polymer/polymer-element.js';
 const $documentContainer = document.createElement('template');
 
 /**

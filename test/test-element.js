@@ -1,9 +1,9 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@polymer/polymer/lib/elements/dom-repeat.js';
-import '@polymer/iron-form/iron-form.js';
+import {PolymerElement} from '../../../@polymer/polymer/polymer-element.js';
+import '../../../@polymer/polymer/lib/elements/dom-repeat.js';
+import '../../../@polymer/iron-form/iron-form.js';
 import {ApiFormMixin} from '../api-form-mixin.js';
 import '../api-form-styles.js';
-import {html} from '@polymer/polymer/lib/utils/html-tag.js';
+import {html} from '../../../@polymer/polymer/lib/utils/html-tag.js';
 /**
  * @customElement
  * @polymer
