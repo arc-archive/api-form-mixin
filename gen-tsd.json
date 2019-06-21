@@ -1,8 +1,7 @@
 {
   "excludeFiles": [
-    "tasks/*",
-    "demo/*",
     "test/*",
-    "index.html"
+    "index.html",
+    "karma.*"
   ]
 }
