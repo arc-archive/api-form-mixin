@@ -131,7 +131,9 @@ export const ApiFormMixin = (base) => class extends base {
       return false;
     }
     this[key] = value;
-    this.requestUpdate(prop, old);
+    if (this.requestUpdate) {
+      this.requestUpdate(prop, old);
+    }
     return true;
   }
 
