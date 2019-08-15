@@ -22,7 +22,7 @@ export default css`
 .form-item {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
 }
 
 :host([narrow]) .form-item,
@@ -37,46 +37,6 @@ export default css`
 :host([optionalopened]) [data-optional] {
   display: flex;
   flex-direction: row;
-}
-/* General action button like "add property" etc */
-.action-button {
-  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
-  margin: var(--api-form-action-button-margin-top, 0);
-  color: var(--api-form-action-button-color, var(--secondary-button-color, var(--accent-color)));
-  background-color: var(--api-form-action-button-background-color, var(--secondary-button-background));
-}
-
-.action-button:hover {
-  color: var(--api-form-action-button-hover-color, var(--secondary-button-color, var(--accent-color)));
-  background-color: var(--api-form-action-button-hover-background-color, var(--secondary-button-background));
-}
-/* Any icon element inside the action button should inherit the same styles */
-.action-button .action-icon {
-  margin-right: 12px;
-  color: var(--api-form-action-button-color, var(--secondary-button-color, var(--accent-color)));
-}
-
-.action-button:hover .action-icon {
-  color: var(--api-form-action-button-hover-color, var(--secondary-button-color, var(--accent-color)));
-}
-
-/* Icons that provide additional documentation to the form item */
-.hint-icon {
-  color: var(--hint-trigger-color, rgba(0, 0, 0, 0.74));
-  transition: color 0.25s ease-in-out;
-}
-
-.hint-icon:hover {
-  color: var(--hint-trigger-hover-color, var(--accent-color, rgba(0, 0, 0, 0.88)));
-}
-/* An icon in the form row that performs some action other than documentation. */
-.action-icon {
-  color: var(--api-form-action-icon-color, var(--icon-button-color, rgba(0, 0, 0, 0.74)));
-  transition: color 0.2s ease-in-out;
-}
-
-.action-icon:hover {
-  color: var(--api-form-action-icon-hover-color, var(--accent-color, rgba(0, 0, 0, 0.88)));
 }
 /* styling form inline markdown */
 arc-marked {
