@@ -30,3 +30,17 @@
 
 
 
+## 3.0.1 (2019-08-15)
+
+
+### Bug Fixes
+
+* fixing delete button index selection ([9e55c64](https://github.com/advanced-rest-client/api-form-mixin/commit/9e55c64))
+
+
+### Features
+
+* **styles:** adding margin to the inline docs ([a13a485](https://github.com/advanced-rest-client/api-form-mixin/commit/a13a485))
+
+
+
