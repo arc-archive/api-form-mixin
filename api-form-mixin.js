@@ -301,7 +301,7 @@ export const ApiFormMixin = (base) => class extends base {
    * @param {CustomEvent} e
    */
   _removeCustom(e) {
-    const index = Number(e.target.dataset.index);
+    const index = Number(e.currentTarget.dataset.index);
     if (index !== index) {
       return;
     }
