@@ -34,7 +34,7 @@ export default css`
   display: none;
 }
 
-:host([optional-opened]) [data-optional] {
+:host([optionalopened]) [data-optional] {
   display: flex;
   flex-direction: row;
 }
