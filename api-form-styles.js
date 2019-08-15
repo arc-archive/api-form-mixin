@@ -82,8 +82,10 @@ export default css`
 arc-marked {
   background-color: var(--inline-documentation-background-color, #FFF3E0);
   padding: 4px;
+  /* Default inputs margin */
+  margin: 0 8px;
 }
-/* wrapped for \`arc-marked\` */
+/* wrapped for arc-marked */
 .docs {
   font-size: var(--arc-font-body1-font-size);
   font-weight: var(--arc-font-body1-font-weight);
