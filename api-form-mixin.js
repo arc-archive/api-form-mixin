@@ -340,4 +340,23 @@ export const ApiFormMixin = (base) => class extends base {
   _computeRenderEmptyMessage(allowCustom, model) {
     return !allowCustom && !model;
   }
+  /**
+   * Dispatches `send-analytics` for GA event.
+   * @param {String} category
+   * @param {String} action
+   * @param {String=} label
+   */
+  _gaEvent(category, action, label) {
+    const e = new CustomEvent('send-analytics', {
+     bubbles: true,
+     composed: true,
+     detail: {
+       type: 'event',
+       category,
+       action,
+       label,
+     }
+    });
+    this.dispatchEvent(e);
+  }
 };

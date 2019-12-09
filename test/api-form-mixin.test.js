@@ -1,4 +1,5 @@
 import { fixture, assert, nextFrame, aTimeout } from '@open-wc/testing';
+import * as sinon from 'sinon';
 import './test-element.js';
 import './no-form-element.js';
 
@@ -314,6 +315,37 @@ describe('ApiFormMixin', function() {
       model.required = true;
       const result = element.computeIsOptional(true, model);
       assert.isFalse(result);
+    });
+  });
+
+  describe('_gaEvent()', () => {
+    const CAT = 'test-category';
+    const ACT = 'test-action';
+    const LAB = 'test-label';
+
+    let element;
+    beforeEach(async () => {
+      element = await basicFixture();
+    });
+
+    it('dispatches event with required arguments', () => {
+      const spy = sinon.spy();
+      element.addEventListener('send-analytics', spy);
+      element._gaEvent(CAT, ACT);
+      assert.isTrue(spy.called, 'event is dispatched');
+      const { type, category, action, label } = spy.args[0][0].detail;
+      assert.equal(type, 'event', 'type is set');
+      assert.equal(category, CAT, 'category is set');
+      assert.equal(action, ACT, 'action is set');
+      assert.isUndefined(label, 'label is not set');
+    });
+
+    it('dispatches optional argument', () => {
+      const spy = sinon.spy();
+      element.addEventListener('send-analytics', spy);
+      element._gaEvent(CAT, ACT, LAB);
+      const { label } = spy.args[0][0].detail;
+      assert.equal(label, LAB, 'label is set');
     });
   });
 });
