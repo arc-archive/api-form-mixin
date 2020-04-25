@@ -28,6 +28,7 @@
     "email": "arc@mulesoft.com"
   },
   "dependencies": {
+    "@api-components/api-view-model-transformer": "^4.1.0",
     "lit-element": "^2.3.1"
   },
   "devDependencies": {

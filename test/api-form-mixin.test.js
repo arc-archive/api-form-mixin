@@ -278,15 +278,6 @@ describe('ApiFormMixin', function() {
       element.addCustom();
       assert.lengthOf(element.model, 2);
     });
-
-    it('Dispatches api-property-model-build event with basic data', (done) => {
-      element.addEventListener('api-property-model-build', (e) => {
-        assert.isTrue(e.cancelable, 'Event is cancelable');
-        assert.typeOf(e.detail, 'object');
-        done();
-      });
-      element.addCustom();
-    });
   });
 
   describe('computeIsOptional()', () => {

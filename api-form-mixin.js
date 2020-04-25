@@ -1,3 +1,4 @@
+import { ApiViewModel } from '@api-components/api-view-model-transformer';
 /**
 @license
 Copyright 2018 The Advanced REST client authors <arc@mulesoft.com>
@@ -266,31 +267,25 @@ export const ApiFormMixin = (base) => class extends base {
    * `model`.
    *
    * @param {String} binding Value if the `binding` property.
-   * @param {Object} opts Additional options:
-   * - inputLabel {String} - Forces a label of the input
+   * @param {Object=} opts Default options for the ModelItem. See `ApiViewModel`
+   * for the details.
    */
-  addCustom(binding, opts) {
-    if (!opts) {
-      opts = {};
-    }
-    const e = new CustomEvent('api-property-model-build', {
-      bubbles: true,
-      composed: true,
-      cancelable: true,
-      detail: {
-        name: opts.name || '',
-        value: opts.value || '',
-        binding: binding,
-        schema: {
-          enabled: true,
-          isCustom: true,
-          inputLabel: opts.inputLabel || undefined
-        }
+  addCustom(binding, opts={}) {
+    const { name='', value='', inputLabel } = opts;
+    const defaults = {
+      name,
+      value,
+      binding,
+      schema: {
+        enabled: true,
+        isCustom: true,
+        inputLabel,
       }
-    });
-    this.dispatchEvent(e);
+    };
+    const worker = new ApiViewModel();
+    const item = worker.buildProperty(defaults);
     const model = this.model || [];
-    this.model = [...model, e.detail];
+    this.model = [...model, item];
     this.optionalOpened = true;
   }
   /**
