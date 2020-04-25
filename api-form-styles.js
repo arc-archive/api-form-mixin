@@ -1,2 +1,3 @@
 // Left for compatibility
-export default './src/ApiFormStyles.js';
+import styles from './src/ApiFormStyles.js';
+export default styles;
