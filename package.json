@@ -1,7 +1,7 @@
 {
   "name": "@api-components/api-form-mixin",
   "description": "A mixin that contains common properties, methods and styles for components that implements AMF based forms",
-  "version": "3.0.4",
+  "version": "3.1.0",
   "license": "Apache-2.0",
   "main": "api-form-mixin.js",
   "keywords": [
