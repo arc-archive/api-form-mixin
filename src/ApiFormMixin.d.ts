@@ -3,6 +3,14 @@ import {IronFormElement} from '@polymer/iron-form';
 
 export {ApiFormMixin};
 
+declare function ApiFormMixin<T extends new (...args: any[]) => {}>(base: T): T & ApiFormMixinConstructor;
+
+interface ApiFormMixinConstructor {
+  new(...args: any[]): ApiFormMixin;
+}
+
+export {ApiFormMixinConstructor};
+
 /**
  * A mixin to be implemented to elements that processes AMF data via form
  * data model and displays forms from the model.
@@ -176,5 +184,3 @@ interface ApiFormMixin {
    */
   _gaEvent(category: string, action: string, label?: string): void;
 }
-
-declare const ApiFormMixin: object;

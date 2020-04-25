@@ -3,9 +3,8 @@ import { ApiFormMixin } from '../api-form-mixin.js';
 import '@polymer/iron-form/iron-form.js';
 import styles from '../api-form-styles.js';
 /**
- * @customElement
- * @demo demo/index.html
- * @appliesMixin ApiFormMixin
+ * @mixes ApiFormMixin
+ * @extends LitElement
  */
 class TestElement extends ApiFormMixin(LitElement) {
   static get styles() {
