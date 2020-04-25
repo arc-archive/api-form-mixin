@@ -1,16 +1,12 @@
-[![Build Status](https://travis-ci.org/advanced-rest-client/api-form-mixin.svg?branch=stage)](https://travis-ci.org/advanced-rest-client/api-form-mixin)
+[![Published on NPM](https://img.shields.io/npm/v/@api-components/api-form-mixin.svg)](https://www.npmjs.com/package/@api-components/api-form-mixin)
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/advanced-rest-client/api-form-mixin)
+[![Build Status](https://travis-ci.com/advanced-rest-client/api-form-mixin.svg)](https://travis-ci.org/advanced-rest-client/api-form-mixin)
 
 ## &lt;api-form-mixin&gt;
 
 A mixin to be used with elements that processes AMF data via form data model and displays forms from the model.
 
 It contains common methods used in forms.
-
-### API components
-
-This components is a part of [API components ecosystem](https://elements.advancedrestclient.com/)
 
 ## Usage
 
@@ -27,7 +23,7 @@ import { ApiFormMixin } from '@api-components/api-form-mixin/api-form-mixin.js';
 import styles from '@api-components/api-form-mixin/api-form-styles.js';
 import '@polymer/iron-form/iron-form.js';
 
-class SampleElement extends PolymerElement {
+class SampleElement extends LitElement {
   static get styles() {
     return [
       styles,
@@ -70,7 +66,7 @@ class SampleElement extends PolymerElement {
 customElements.define('sample-element', SampleElement);
 ```
 
-### Installation
+## Development
 
 ```sh
 git clone https://github.com/advanced-rest-client/api-form-mixin
