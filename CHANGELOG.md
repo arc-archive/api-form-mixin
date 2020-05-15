@@ -269,3 +269,24 @@
 * moving sources to src/ folder [93da83f](https://github.com/advanced-rest-client/api-form-mixin/commit/93da83f181418a99ad4c8468707bd31c621726f1) by Pawel
 
 
+<a name="3.1.2"></a>
+## [3.1.2](https://github.com/advanced-rest-client/api-form-mixin/compare/3.1.0...3.1.2) (2020-05-15)
+
+### Build
+
+* bumping version [86b7f9e](https://github.com/advanced-rest-client/api-form-mixin/commit/86b7f9eec37f436ab4162aa2e824b229793cdddd) by Pawel
+* bumping version [a51192a](https://github.com/advanced-rest-client/api-form-mixin/commit/a51192af69b813c0d225aa0596c51c457731443e) by Pawel
+
+
+### Update
+
+* [ci skip] automated merge master->stage. syncing main branches [a0e1656](https://github.com/advanced-rest-client/api-form-mixin/commit/a0e16564b8a38fa3fe6c7b8fadb19691cb9617fc) by Ci agent
+* updating project to open-wc standards [7101c88](https://github.com/advanced-rest-client/api-form-mixin/commit/7101c8831cb93b21aec9b980f06eb5884d36e4f4) by Pawel
+* [ci skip] automated merge master->stage. syncing main branches [b8328cd](https://github.com/advanced-rest-client/api-form-mixin/commit/b8328cd2bbdaaf4a3e88c20a1730e0a3355b07b1) by Ci agent
+
+
+### Refactor
+
+* moving unrelated to component instance logic to a helper [f852f77](https://github.com/advanced-rest-client/api-form-mixin/commit/f852f777cb4c96bbdabaa06e028a30f8eefd2ddb) by Pawel
+
+
