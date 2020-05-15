@@ -290,3 +290,22 @@
 * moving unrelated to component instance logic to a helper [f852f77](https://github.com/advanced-rest-client/api-form-mixin/commit/f852f777cb4c96bbdabaa06e028a30f8eefd2ddb) by Pawel
 
 
+<a name="3.1.3"></a>
+## [3.1.3](https://github.com/advanced-rest-client/api-form-mixin/compare/3.1.1...3.1.3) (2020-05-15)
+
+### Build
+
+* bumping version [86b7f9e](https://github.com/advanced-rest-client/api-form-mixin/commit/86b7f9eec37f436ab4162aa2e824b229793cdddd) by Pawel
+
+
+### Update
+
+* adding Utils export through index.js [dfb2e03](https://github.com/advanced-rest-client/api-form-mixin/commit/dfb2e036ef4d74bda8e71c3caa94648f63d352d4) by Pawel
+* [ci skip] automated merge master->stage. syncing main branches [d1a8120](https://github.com/advanced-rest-client/api-form-mixin/commit/d1a8120d6e16f79f1015cbf2a68856d706a7c367) by Ci agent
+
+
+### Refactor
+
+* moving unrelated to component instance logic to a helper [f852f77](https://github.com/advanced-rest-client/api-form-mixin/commit/f852f777cb4c96bbdabaa06e028a30f8eefd2ddb) by Pawel
+
+
