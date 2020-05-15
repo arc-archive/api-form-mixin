@@ -240,3 +240,32 @@
  [637e0f5](https://github.com/advanced-rest-client/api-form-mixin/commit/637e0f5f7f08e1164d66001743617c3893c4e4e8) by Pawel Psztyc
 
 
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/advanced-rest-client/api-form-mixin/compare/3.0.4...3.1.1) (2020-05-15)
+
+### Build
+
+* bumping version [a51192a](https://github.com/advanced-rest-client/api-form-mixin/commit/a51192af69b813c0d225aa0596c51c457731443e) by Pawel
+* bumping version [3fc624a](https://github.com/advanced-rest-client/api-form-mixin/commit/3fc624a6e4e28e91a7268519ac779e3f177e32f3) by Pawel
+
+
+### Update
+
+* updating project to open-wc standards [7101c88](https://github.com/advanced-rest-client/api-form-mixin/commit/7101c8831cb93b21aec9b980f06eb5884d36e4f4) by Pawel
+* [ci skip] automated merge master->stage. syncing main branches [b8328cd](https://github.com/advanced-rest-client/api-form-mixin/commit/b8328cd2bbdaaf4a3e88c20a1730e0a3355b07b1) by Ci agent
+* updating mixin's type [1b822b5](https://github.com/advanced-rest-client/api-form-mixin/commit/1b822b5a71585f88b3ebee7a93824aa61ce0d438) by Pawel
+* adding manually defined types [fae6ac4](https://github.com/advanced-rest-client/api-form-mixin/commit/fae6ac463dc11aad8e6837536618fb947eb81a44) by Pawel
+* adding `ApiViewModel` class support [cfb7556](https://github.com/advanced-rest-client/api-form-mixin/commit/cfb7556629be255051d1f4421bf916392bce0716) by Pawel
+* bulk upgrade to latest ARC standards [2c7ac70](https://github.com/advanced-rest-client/api-form-mixin/commit/2c7ac70162c8c6c023334b33be196465ead61fa9) by Pawel
+
+
+### Bug Fixes
+
+* fixes styles export [6a78dba](https://github.com/advanced-rest-client/api-form-mixin/commit/6a78dba946a80f6d2389e3bf14c3b8ea51c5bbf6) by Pawel
+
+
+### Refactor
+
+* moving sources to src/ folder [93da83f](https://github.com/advanced-rest-client/api-form-mixin/commit/93da83f181418a99ad4c8468707bd31c621726f1) by Pawel
+
+
