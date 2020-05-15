@@ -3,21 +3,21 @@ import * as sinon from 'sinon';
 import './test-element.js';
 import './no-form-element.js';
 
-describe('ApiFormMixin', function() {
+describe('ApiFormMixin', () => {
   async function basicFixture() {
-    return (await fixture(`<test-element></test-element>`));
+    return fixture(`<test-element></test-element>`);
   }
 
   async function allowOptionalFixture() {
-    return (await fixture(`<test-element allowhideoptional></test-element>`));
+    return fixture(`<test-element allowhideoptional></test-element>`);
   }
 
   async function allowCustomFixture() {
-    return (await fixture(`<test-element allowcustom></test-element>`));
+    return fixture(`<test-element allowcustom></test-element>`);
   }
 
   async function noFormFixture() {
-    return (await fixture(`<no-form-element></no-form-element>`));
+    return fixture(`<no-form-element></no-form-element>`);
   }
 
   describe('Basic computations', () => {
@@ -79,22 +79,28 @@ describe('ApiFormMixin', function() {
 
     it('Adds required name', () => {
       const result = element.computeFormRowClass({
-        required: true
+        required: true,
       });
       assert.equal(result, 'param-value required');
     });
 
     it('If not requred and optional are allowed then optional', () => {
-      const result = element.computeFormRowClass({
-        required: false
-      }, true);
+      const result = element.computeFormRowClass(
+        {
+          required: false,
+        },
+        true
+      );
       assert.equal(result, 'param-value optional');
     });
 
     it('If not requred and optional are not allowed then nothing', () => {
-      const result = element.computeFormRowClass({
-        required: false
-      }, false);
+      const result = element.computeFormRowClass(
+        {
+          required: false,
+        },
+        false
+      );
       assert.equal(result, 'param-value');
     });
 
@@ -154,12 +160,12 @@ describe('ApiFormMixin', function() {
     const invalidModel = {
       required: true,
       name: 'test-name',
-      value: ''
+      value: '',
     };
     const validModel = {
       required: true,
       name: 'test-name',
-      value: 'test-value'
+      value: 'test-value',
     };
 
     let element;
@@ -174,36 +180,39 @@ describe('ApiFormMixin', function() {
     });
 
     it('Form with required empty values is not validated', async () => {
-      element.model = [Object.assign({}, invalidModel)];
-      await aTimeout();
+      element.model = [{ ...invalidModel }];
+      await aTimeout(0);
       const result = element._getValidity();
       assert.isFalse(result);
     });
 
     it('Form is validated', async () => {
-      element.model = [Object.assign({}, validModel)];
-      await aTimeout();
+      element.model = [{ ...validModel }];
+      await aTimeout(0);
       const result = element._getValidity();
       assert.isTrue(result);
     });
 
     it('Returns true when no iron-form', async () => {
-      const element = await noFormFixture();
-      const result = element._getValidity();
+      const el = await noFormFixture();
+      const result = el._getValidity();
       assert.isTrue(result);
     });
   });
 
   describe('serializeForm()', () => {
-    const model = [{
-      required: true,
-      name: 'test-name',
-      value: 'test-value'
-    }, {
-      required: true,
-      name: 'test-name-1',
-      value: 'test-value-1'
-    }];
+    const model = [
+      {
+        required: true,
+        name: 'test-name',
+        value: 'test-value',
+      },
+      {
+        required: true,
+        name: 'test-name-1',
+        value: 'test-value-1',
+      },
+    ];
     it('Returns empty object when no model', async () => {
       const element = await basicFixture();
       const result = element.serializeForm();
@@ -214,7 +223,7 @@ describe('ApiFormMixin', function() {
     it('Returns model values', async () => {
       const element = await basicFixture();
       element.model = model;
-      await aTimeout();
+      await aTimeout(0);
       const result = element.serializeForm();
       assert.typeOf(result, 'object');
       assert.lengthOf(Object.keys(result), 2);
@@ -242,17 +251,21 @@ describe('ApiFormMixin', function() {
     });
 
     it('Returns false when no isCustom', () => {
-      assert.isFalse(element._computeIsCustom({
-        schema: {}
-      }));
+      assert.isFalse(
+        element._computeIsCustom({
+          schema: {},
+        })
+      );
     });
 
     it('Returns true when isCustom', () => {
-      assert.isTrue(element._computeIsCustom({
-        schema: {
-          isCustom: true
-        }
-      }));
+      assert.isTrue(
+        element._computeIsCustom({
+          schema: {
+            isCustom: true,
+          },
+        })
+      );
     });
   });
 
@@ -260,7 +273,7 @@ describe('ApiFormMixin', function() {
     const model = {
       required: true,
       name: 'test-name',
-      value: 'test-value'
+      value: 'test-value',
     };
     let element;
     beforeEach(async () => {
@@ -288,7 +301,7 @@ describe('ApiFormMixin', function() {
       model = {
         required: false,
         name: 'test-name',
-        value: 'test-value'
+        value: 'test-value',
       };
     });
 

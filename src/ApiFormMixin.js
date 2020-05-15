@@ -1,4 +1,5 @@
 import { ApiViewModel } from '@api-components/api-view-model-transformer';
+import * as Utils from './Utils.js';
 
 /* eslint-disable class-methods-use-this */
 
@@ -30,7 +31,7 @@ the License.
  * @return {*}
  * @mixin
  */
-export const ApiFormMixin = base =>
+export const ApiFormMixin = (base) =>
   class extends base {
     static get properties() {
       return {
@@ -191,19 +192,12 @@ export const ApiFormMixin = base =>
       optionalOpened,
       allowDisableParams
     ) {
-      let clazz = 'param-value';
-      if (item && item.required) {
-        clazz += ' required';
-      } else if (allowHideOptional) {
-        clazz += ' optional';
-      }
-      if (optionalOpened) {
-        clazz += ' with-optional';
-      }
-      if (allowDisableParams) {
-        clazz += ' has-enable-button';
-      }
-      return clazz;
+      return Utils.rowClass(
+        item,
+        allowHideOptional,
+        optionalOpened,
+        allowDisableParams
+      );
     }
 
     /**
@@ -267,10 +261,7 @@ export const ApiFormMixin = base =>
      * @return {Boolean} `true` if model has at leas one alement that is not required.
      */
     _computeHasOptionalParameters(allowHideOptional, model) {
-      if (!allowHideOptional || !model) {
-        return false;
-      }
-      return model.some(item => item.required === false);
+      return Utils.hasOptionalParameters(allowHideOptional, model);
     }
 
     /**
@@ -281,7 +272,7 @@ export const ApiFormMixin = base =>
      * @return {Boolean} True if both values are `true`.
      */
     _computeRenderCheckbox(render, has) {
-      return render && has;
+      return Utils.renderCheckbox(render, has);
     }
 
     /**
@@ -292,10 +283,7 @@ export const ApiFormMixin = base =>
      * property.
      */
     _computeIsCustom(model) {
-      if (!model || !model.schema || !model.schema.isCustom) {
-        return false;
-      }
-      return true;
+      return Utils.isCustom(model);
     }
 
     /**
@@ -362,24 +350,18 @@ export const ApiFormMixin = base =>
      * @return {Boolean} `true` if the model item is optional in the form.
      */
     computeIsOptional(hasOptional, model) {
-      if (!hasOptional) {
-        return false;
-      }
-      if (!model || !model.required) {
-        return true;
-      }
-      return false;
+      return Utils.isOptional(hasOptional, model);
     }
 
     /**
      * Computes value for `renderEmptyMessage`.
      *
      * @param {Boolean} allowCustom True if the form allows to add custom values.
-     * @param {?Array} model Current model
+     * @param {Array=} model Current model
      * @return {Boolean} `true` when allowCustom is falsy set and model is empty
      */
     _computeRenderEmptyMessage(allowCustom, model) {
-      return !allowCustom && !model;
+      return Utils.canRenderEmptyMessage(allowCustom, model);
     }
 
     /**
