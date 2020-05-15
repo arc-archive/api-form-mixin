@@ -1,6 +1,6 @@
 [![Published on NPM](https://img.shields.io/npm/v/@api-components/api-form-mixin.svg)](https://www.npmjs.com/package/@api-components/api-form-mixin)
 
-[![Build Status](https://travis-ci.com/advanced-rest-client/api-form-mixin.svg)](https://travis-ci.org/advanced-rest-client/api-form-mixin)
+[![Build Status](https://travis-ci.com/advanced-rest-client/api-form-mixin.svg)](https://travis-ci.com/advanced-rest-client/api-form-mixin)
 
 ## &lt;api-form-mixin&gt;
 
