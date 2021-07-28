@@ -8,10 +8,15 @@ A mixin to be used with elements that processes AMF data via form data model and
 
 It contains common methods used in forms.
 
+## Deprecation notice
+
+This element is moved to `api-forms` repository and `@api-components/api-forms` package. This element will be deprecated and archived once the migration finish.
+
 ## Usage
 
 ### Installation
-```
+
+```sh
 npm install --save @api-components/api-form-mixin
 ```
 
@@ -81,6 +86,7 @@ npm start
 ```
 
 ### Running the tests
+
 ```sh
 npm test
 ```
